@@ -1,6 +1,6 @@
 config { type: "assertion" }
 
-select customer_id 
+select customers.customer_id 
 from ${ref('customers')} as customers
 left join ${ref('stg_customers')} as stg
     on customers.customer_id = stg.customer_id

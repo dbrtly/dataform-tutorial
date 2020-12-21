@@ -26,6 +26,10 @@ jobs:
         uses: docker://dataformco/dataform:latest
         with:
           args: compile --json
+      - name: run the unit (logic) tests 
+          uses: docker://dataformco/dataform:latest
+          with:
+            args: test
       - name: Dry-run dataform 
         uses: docker://dataformco/dataform:latest
         with:
