@@ -22,14 +22,14 @@ jobs:
         run: gpg --quiet --batch --yes --decrypt --passphrase="$CREDENTIALS_GPG_PASSPHRASE" --output .df-credentials.json .df-credentials.json.gpg
         env:
             CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
-      - name: compile the project 
+      - name: compile the project to a json artefact
         uses: docker://dataformco/dataform:latest
         with:
-          args: compile
+          args: compile --json
       - name: Dry-run dataform 
         uses: docker://dataformco/dataform:latest
         with:
-          args: run --dry-run
+          args: run --dry-run --json
       - name: deploy project 
         uses: docker://dataformco/dataform:latest
         with:
