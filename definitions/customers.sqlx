@@ -1,4 +1,9 @@
 config {
+    assertions: {
+        nonNull: ["customer_id"],
+        uniqueKey: ["customer_id"]
+    },
+    dependencies: [ "stg_customers", "stg_orders" ],
     schema: "raw",
     type: 'view'
 } 

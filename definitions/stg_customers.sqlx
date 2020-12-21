@@ -1,6 +1,10 @@
 config {
+    assertions: {
+        nonNull: ["customer_id"],
+        uniqueKey: ["customer_id"]
+    },
     schema: "raw",
-    type: 'view'
+    type: 'view',
 } 
 
 select

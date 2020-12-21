@@ -1,0 +1,8 @@
+config { type: "assertion" }
+
+select customer_id 
+from customers 
+left join ${ref("stg_customers")} stg
+    on customers.customer_id = stg.customer_id
+where 
+    stg.customer_id is null

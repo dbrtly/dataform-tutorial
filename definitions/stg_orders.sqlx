@@ -1,4 +1,8 @@
 config {
+    assertions: {
+        nonNull: ["customer_id", "order_id"],
+        uniqueKey: ["customer_id", "order_id"]
+    },
     schema: "raw",
     type: 'view'
 } 
