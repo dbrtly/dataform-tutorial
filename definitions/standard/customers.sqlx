@@ -4,7 +4,7 @@ config {
         uniqueKey: ["customer_id"]
     },
     dependencies: [ "stg_customers", "stg_orders" ],
-    schema: "raw",
+    schema: "standard",
     type: 'view'
 } 
 
