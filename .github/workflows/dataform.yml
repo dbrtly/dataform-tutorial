@@ -14,15 +14,19 @@ jobs:
     steps:
       - name: Checkout code into workspace directory
         uses: actions/checkout@v2
-      - name: Decrypt dataform credentials
-        run: gpg --quiet --batch --yes --decrypt --passphrase="$CREDENTIALS_GPG_PASSPHRASE" --output .df-credentials.json .df-credentials.json.gpg
-        env:
-            CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
       - name: Install project dependencies
         uses: docker://dataformco/dataform:latest
         with:
           args: install
-      - name: Run dataform compile
+      - name: Decrypt dataform credentials
+        run: gpg --quiet --batch --yes --decrypt --passphrase="$CREDENTIALS_GPG_PASSPHRASE" --output .df-credentials.json .df-credentials.json.gpg
+        env:
+            CREDENTIALS_GPG_PASSPHRASE: ${{ secrets.CREDENTIALS_GPG_PASSPHRASE }}
+      - name: Dry-run dataform 
         uses: docker://dataformco/dataform:latest
         with:
-          args: compile
+          args: run --dry-run
+      - name: deploy project 
+        uses: docker://dataformco/dataform:latest
+        with:
+          args: run
