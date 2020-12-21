@@ -1,0 +1,6 @@
+config {
+    schema: "raw",
+    type: 'view'
+} 
+
+SELECT 1 AS column1
