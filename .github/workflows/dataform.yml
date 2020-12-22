@@ -34,6 +34,10 @@ jobs:
         uses: docker://dataformco/dataform:latest
         with:
           args: run --dry-run --json
+      - name: Dry-run dataform 
+        uses: docker://dataformco/dataform:latest
+        with:
+          args: run --actions
       - name: deploy project 
         uses: docker://dataformco/dataform:latest
         with:

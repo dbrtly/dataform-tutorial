@@ -1,7 +1,8 @@
 config {
     assertions: {
         nonNull: ["customer_id"],
-        uniqueKey: ["customer_id"]
+        uniqueKey: ["customer_id"],
+        rowConditions: [positiveNumber.positiveNumber("customer_id")]
     },
     schema: "raw",
     type: 'view',

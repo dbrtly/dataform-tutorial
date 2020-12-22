@@ -1,0 +1,9 @@
+config {
+  type: "view",
+  name: "ages"
+}
+
+SELECT 115 AS age UNION ALL
+SELECT 121 AS age UNION ALL
+SELECT 124 AS age UNION ALL
+SELECT 134 AS age
