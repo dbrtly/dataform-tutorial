@@ -2,7 +2,7 @@ config {
     assertions: {
         nonNull: ["customer_id", "order_id"],
         uniqueKey: ["customer_id", "order_id"],
-        rowConditions: [ "status NOT IN 'placed', 'shipped', 'completed', 'return_pending', 'returned'" ]
+        rowConditions: [ "status IN ('placed', 'shipped', 'completed', 'return_pending', 'returned'") ]
     },
     schema: "raw",
     type: 'view'
