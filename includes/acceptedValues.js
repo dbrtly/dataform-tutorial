@@ -1,5 +1,5 @@
-// function acceptedValues(colName, valuesList) {
-//     return `${colName} not in (${valuesList})`;
-// }
+function acceptedValues(colName, valuesList) {
+    return `${colName} NOT IN ( ${valuesList} )`;
+}
 
-// module.exports = { acceptedValues };
+module.exports = { acceptedValues };
