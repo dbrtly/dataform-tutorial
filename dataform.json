@@ -1,7 +1,7 @@
 {
     "warehouse": "bigquery",
     "defaultSchema": "raw",
-    "assertionSchema": "dbrtly-dataform_assertions",
+    "assertionSchema": "dbrtly_dataform_assertions",
     "defaultDatabase": "dbrtly-dataform-299304",
     "useRunCache": false
 }
